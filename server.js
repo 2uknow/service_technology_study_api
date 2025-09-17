@@ -1,4 +1,4 @@
-// server.js (알람 시스템 개선 + 성능 최적화 버전)
+// server.js (알람 시스템 개선 + 성능 최적화 버전) namikko
 import express from 'express';
 import morgan from 'morgan';
 import fs from 'fs';
