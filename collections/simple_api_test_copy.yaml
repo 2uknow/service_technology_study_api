@@ -13,7 +13,7 @@ variables:
   EMAIL: "2uknow@danal.co.kr"
   DYNAMIC_PREFIX: "{{js: new Date().getHours() > 12 ? 'PM' : 'AM'}}"
   
-  # SKT 비밀번호 체크용 변수
+  # SKT 비밀번호 체크용 변수 기문기문기문
   IDEN: "9002051"
   DST_ADDR: "01046911117"
   CARRIER: "SKT"
