@@ -5,7 +5,7 @@ import path from 'path';
 import { YAMLAssertEngine } from './yaml-assert-engine.js';
 
 /**
- * SClient 시나리오 전용 간단한 YAML 파서
+ * SClient 시나리오 전용 간단한 YAML 파서입니다랑.
  * 복잡한 YAML 구조보다는 실용적인 변환에 중점
  */
 export class SClientYAMLParser {
