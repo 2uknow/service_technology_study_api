@@ -18,6 +18,7 @@
 !yaml-assert-engine.js
 !newman-converter.js
 !sclient-test-validator.js
+!yaml-parser.js
 
 # Config / Collections / Jobs
 !config/
@@ -27,6 +28,8 @@
 !collections/**/*.yaml
 !collections/**/*.yml
 !collections/**/*.json
+!environments
+!environments/*.json
 
 !jobs/
 !jobs/**/*.json
