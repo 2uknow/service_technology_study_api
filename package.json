@@ -1,0 +1,84 @@
+{
+  "name": "danal-external-api-monitor",
+  "version": "2.0.0",
+  "description": "Danal External API 모니터링 시스템 with 네이버 웍스 알람",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:env": "node -r dotenv/config server.js",
+    "dev": "nodemon server.js",
+    "dev:env": "nodemon -r dotenv/config server.js",
+    "test": "npm run test:alert",
+    "test:alert": "node scripts/test.js alert",
+    "test:error": "node scripts/test.js error",
+    "test:connection": "node scripts/test.js connection",
+    "debug:urls": "node scripts/test.js urls",
+    "debug:health": "node scripts/test.js health",
+    "debug:config": "node scripts/test.js config",
+    "debug:cache": "node scripts/debug-cache.js status",
+    "debug:clear-cache": "node scripts/debug-cache.js clear",
+    "debug:network": "node scripts/network-test.js",
+    "debug:local": "node scripts/diagnose-local.js",
+    "debug:browser": "node scripts/fix-browser-issues.js",
+    "debug:ip": "node scripts/diagnose-ip-access.js",
+    "debug:all": "node scripts/test.js all",
+    "fix:ip": "node scripts/fix-ip-access.js",
+    "setup": "npm install && npm run create-dirs",
+    "create-dirs": "mkdir -p config reports logs jobs scripts && echo '{\"site_port\":3000}' > config/settings.json",
+    "clean": "rm -rf reports/* logs/*",
+    "backup": "tar -czf backup-$(date +%Y%m%d-%H%M%S).tar.gz config reports logs jobs",
+    "docker:build": "docker build -t danal-api-monitor .",
+    "docker:run": "node scripts/docker-run.js",
+    "install-reporters": "npm install newman newman-reporter-htmlextra",
+    "update-newman": "npm install newman@latest newman-reporter-htmlextra@latest"
+  },
+  "keywords": [
+    "danal",
+    "external-api",
+    "api-monitoring",
+    "newman",
+    "postman",
+    "automation",
+    "naver-works",
+    "webhook",
+    "alerts",
+    "scheduler",
+    "cron"
+  ],
+  "author": "Danal R&D Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "iconv-lite": "^0.7.0",
+    "js-yaml": "^4.1.0",
+    "kisa-seed": "^1.0.1",
+    "morgan": "^1.10.1",
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "seed-ecb": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danal-rnd/danal-external-api-monitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danal-rnd/danal-external-api-monitor/issues"
+  },
+  "homepage": "https://github.com/danal-rnd/danal-external-api-monitor#readme",
+  "config": {
+    "default_port": 3000,
+    "default_timezone": "Asia/Seoul"
+  }
+}
